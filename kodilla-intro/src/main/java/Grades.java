@@ -17,8 +17,8 @@ public class Grades {
         return this.grades[this.size - 1];
     }
     public double averageGrades() {
-        int sum = 0;
-        int result = 0;
+        double sum = 0;
+        double result = 0;
         for (int i = 0; i < size; i++) {
             result = result + this.grades[i];
         }
