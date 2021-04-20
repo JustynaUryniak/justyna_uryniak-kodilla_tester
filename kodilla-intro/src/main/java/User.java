@@ -17,21 +17,22 @@ public class User {
         User marcin = new User("Marcin", 76);
 
         User[] users = {"Piotr", "Adam", "Kasia", "Ola", "Marcin"};
+    }
 
         public int averageAge (User[]users){
-            int result = 0;
+            double result = 0;
             for (int i = 0; i < users.length; i++) {
                 result = result + users[i].userAge
                 return result / users.length;
             }
-            public int belowAverageAge (User[]users){
-                int average = result / users.length;
+        }
+            public int belowAverageAge (User[]users) {
+                double averageAge;
+                double average = result / users.length;
                 for (int i = 0; i < users.length; i++) {
                     if (users[i].userAge < average) {
                         System.out.println(users[i].userName);
                     }
                 }
             }
-        }
-    }
-}
+
