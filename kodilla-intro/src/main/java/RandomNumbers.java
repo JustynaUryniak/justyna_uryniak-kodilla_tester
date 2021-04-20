@@ -5,6 +5,7 @@ public class RandomNumbers {
     int sum = 0;
     int min = 30;
     int max = 0;
+    int[] tab = new int[30];
 
     public int getCountOfRandomNumber() {
         Random random = new Random();
@@ -16,24 +17,23 @@ public class RandomNumbers {
         return result;
     }
 
-    public int getMax(int temp, int max) {
-            int max = 0;
-        for (int i = 0; i < temp; i++) {
-            if (temp > max) {
-                max = temp;
+    public int getMax(int[] tab, int max) {
+        int max = tab[0];
+        for (int i = 0; i < tab.length; i++) {
+            if (tab[i] > max) {
+                max = tab[i];
             }
         }
         return max;
     }
 
-    public int getMin(int temp, int min) {
-            int min = 30;
-        for (int i = 0; i < temp; i++) {
-            if (temp < min) {
-                min = temp;
+    public int getMin(int[] tab, int min) {
+        int min = tab[0];
+        for (int i = 0; i < tab.length; i++) {
+            if (tab[i] < min) {
+                min = tab[i];
             }
         }
         return min;
     }
 }
-
