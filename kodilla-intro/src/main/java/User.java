@@ -6,6 +6,7 @@ public class User {
         this.userName = userName;
         this.userAge = userAge;
     }
+
     public static void main(String[] args) {
 
 
@@ -17,15 +18,18 @@ public class User {
 
         User[] users = {"Piotr", "Adam", "Kasia", "Ola", "Marcin"};
 
-        public int averageAge(User[] users) {
+        public int averageAge (User[]users){
             int result = 0;
             for (int i = 0; i < users.length; i++) {
                 result = result + users[i].userAge
-                return = result / users.length;
-
-                int sum = result / users.length;
-                for (int i = 0; i < int sum; i++) {
-                    System.out.println(users[i].userName);
+                return result / users.length;
+            }
+            public int belowAverageAge (User[]users){
+                int average = result / users.length;
+                for (int i = 0; i < users.length; i++) {
+                    if (users[i].userAge < average) {
+                        System.out.println(users[i].userName);
+                    }
                 }
             }
         }
