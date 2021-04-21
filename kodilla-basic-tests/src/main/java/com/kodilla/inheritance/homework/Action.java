@@ -10,6 +10,5 @@ public class Action {
 
         MacOsX macOsX = new MacOsX(2001);
         macOsX.displayYearOfProduction();
-        macOsX.update();
     }
 }

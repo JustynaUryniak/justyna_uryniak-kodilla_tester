@@ -1,6 +1,6 @@
 package com.kodilla.inheritance.homework;
 
-public class MacOsX extends MsWindows {
+public class MacOsX extends OperatingSystem {
 
     public MacOsX(int yearOfProduction) {
         super(yearOfProduction);
@@ -12,9 +12,5 @@ public class MacOsX extends MsWindows {
 
     public void turnOff() {
         System.out.println("The operating system was turned off in 4 seconds.");
-    }
-
-    public void update() {
-        System.out.println("The operating system was updated 2 days ago.");
     }
 }

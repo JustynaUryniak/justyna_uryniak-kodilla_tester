@@ -13,9 +13,9 @@ public class OperatingSystem {
         System.out.println("The operating system was turned on.");
 }
     public void turnOff() {
-        System.out.println("The operating system was turned off.");
+        System.out.println("The operating system was turned off");
     }
     public void displayYearOfProduction() {
-        System.out.println("The year of production: " + yearOfProduction);
+        System.out.println("The year of production:  " + yearOfProduction);
     }
 }

@@ -12,7 +12,4 @@ public class MsWindows extends OperatingSystem {
     public void turnOff() {
         System.out.println("The operating system was turned off in 2 seconds.");
     }
-    public void update() {
-        System.out.println("The operating system was updated 1 day ago.");
-    }
  }
