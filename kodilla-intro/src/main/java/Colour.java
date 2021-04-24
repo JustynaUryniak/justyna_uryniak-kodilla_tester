@@ -1,36 +1,32 @@
 import java.util.Scanner;
 
 public class Colour {
+    public static void main(String[] args) {
 
-        enum Colour {
-            R, /* Red */
-            P, /* Pink */
-            B, /* Blue */
-            V, /* Violet */
-        }
-        public static void main(String[] args) {
-        Colour colour = Colour(getLetter());
+    String letter = getLetter();
 
-        switch(colour) {
-            case R:
+        switch(letter) {
+            case "R":
                 System.out.println("Red");
                 break;
-            case P:
+            case "P":
                 System.out.println("Pink");
                 break;
-            case B:
+            case "B":
                 System.out.println("Blue");
                 break;
-            case V:
+            case "V":
                 System.out.println("Violet");
                 break;
             default: System.out.println("Wrong letter. Try again");
+                break;
         }
     }
     public static String getLetter() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the first letter of colour:");
-        String let = scanner.nextLine();
+        String let = scanner.nextLine().trim().toUpperCase();
         return let;
     }
 }
+
