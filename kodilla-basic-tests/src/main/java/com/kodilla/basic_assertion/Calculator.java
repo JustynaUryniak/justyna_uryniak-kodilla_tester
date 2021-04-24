@@ -9,6 +9,7 @@ public class Calculator {
     public int subtract(int a, int b) {
         return a - b;
     }
+
     public double pow(double c, double d) {
         return Math.pow(c,d);
     }
