@@ -16,23 +16,24 @@ public class User {
         User ola = new User("Ola", 36);
         User marcin = new User("Marcin", 76);
 
-        User[] users = {"Piotr", "Adam", "Kasia", "Ola", "Marcin"};
+        User[] users = {piotr, adam, kasia, ola, marcin};
     }
 
-        public int averageAge (User[]users){
-            double result = 0;
-            for (int i = 0; i < users.length; i++) {
-                result = result + users[i].userAge
-                return result / users.length;
+    public double averageAge(User[] users) {
+        double result = 0;
+        for (int i = 0; i < users.length; i++) {
+            result = result + users[i].userAge;
+        }
+        return result / users.length;
+    }
+
+    public void belowAverageAge(User[] users, double averageAge) {
+        double average = averageAge / users.length;
+        for (int i = 0; i < users.length; i++) {
+            if (users[i].userAge < average) {
+                System.out.println(users[i].userName);
             }
         }
-            public int belowAverageAge (User[]users) {
-                double averageAge;
-                double average = result / users.length;
-                for (int i = 0; i < users.length; i++) {
-                    if (users[i].userAge < average) {
-                        System.out.println(users[i].userName);
-                    }
-                }
-            }
+    }
+}
 
