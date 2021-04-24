@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculatorTestSuite {
+
     @Test
     public void testSum() {
         Calculator calculator = new Calculator();
