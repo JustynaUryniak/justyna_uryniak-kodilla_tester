@@ -28,22 +28,22 @@ public class CalculatorTestSuite {
         double c = 3;
         double d = 2;
         double powResult = calculator.pow(c, d);
-        assertEquals(9, powResult);
+        assertEquals(9, powResult, 0.01);
     }
     @Test
-    public void testPow1() {
+    public void shouldReturnEqualsZero() {
         Calculator calculator = new Calculator();
         double c = 0;
         double d = 2;
         double powResult = calculator.pow(c, d);
-        assertEquals(0, powResult);
+        assertEquals(0, powResult, 0.01);
     }
     @Test
-    public void testPow2() {
+    public void shouldReturnPositiveNumber() {
         Calculator calculator = new Calculator();
         double c = -6;
         double d = 2;
         double powResult = calculator.pow(c, d);
-        assertEquals(36, powResult);
+        assertEquals(36, powResult, 0.01);
     }
 }
