@@ -24,7 +24,7 @@ public class CarsApplication {
         int b = random.nextInt(100);
         int c = random.nextInt(100);
         if (drawnCarBrand == 0)
-            return new Ford(a);
+            return new Ford(b);
         else if (drawnCarBrand == 1)
             return new Kia(b);
         else
