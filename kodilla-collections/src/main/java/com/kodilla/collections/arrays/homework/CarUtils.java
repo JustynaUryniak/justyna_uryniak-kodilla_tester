@@ -8,7 +8,7 @@ import com.kodilla.collections.interfaces.homework.Mercedes;
 
 public class CarUtils {
     public static void describeCar(Car car) {
-        System.out.println("-----------------------------");
+        System.out.println("------------------------------");
         System.out.println("The car brand: " + getCarBrand(car));
         System.out.println("Car speed: " + car.getSpeed());
         car.increaseSpeed();
