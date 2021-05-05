@@ -21,7 +21,7 @@ public class Principal {
 
     @Override
     public String toString() {
-        return "Principal{" +
+        return "Principal: " +
                 "namePrincipal='" + namePrincipal + '\'' +
                 ", nameSchool='" + nameSchool + '\'' +
                 '}';

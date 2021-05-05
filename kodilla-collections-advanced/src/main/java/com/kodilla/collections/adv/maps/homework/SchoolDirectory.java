@@ -21,10 +21,5 @@ public class SchoolDirectory {
 
         for (Map.Entry<Principal, School> principalEntry : institution.entrySet())
         System.out.println("Principal: " + principalEntry.getKey().getNamePrincipal() + ", School name: " + principalEntry.getKey().getNameSchool() + ", Number of students in the class: " + principalEntry.getValue().getSum());
-
-
-
-
-
     }
 }
