@@ -20,7 +20,7 @@ public class School {
 
     @Override
     public String toString() {
-        return "Students: " + classStudentsQuantity.toString();
+        return "School: " + classStudentsQuantity.toString();
     }
 }
 
