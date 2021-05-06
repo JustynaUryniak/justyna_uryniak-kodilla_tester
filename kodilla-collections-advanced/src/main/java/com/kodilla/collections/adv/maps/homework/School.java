@@ -7,20 +7,20 @@ public class School {
     private List<Integer> classStudentsQuantity = new ArrayList<>();
 
     public School(int... classStudentsQuantity) {
-        for(int school : classStudentsQuantity)
-            this.classStudentsQuantity.add(school);
+        for(int students : classStudentsQuantity)
+            this.classStudentsQuantity.add(students);
     }
 
     public int getSum() {
         int sum = 0;
-        for(int school : classStudentsQuantity)
-            sum += school;
+        for(int students : classStudentsQuantity)
+            sum += students;
         return sum;
     }
 
     @Override
     public String toString() {
-        return "School: " + classStudentsQuantity.toString();
+        return "Students: " + classStudentsQuantity.toString();
     }
 }
 
