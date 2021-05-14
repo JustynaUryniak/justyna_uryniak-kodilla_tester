@@ -13,6 +13,14 @@ public class Order {
         return number;
     }
 
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "number='" + number + '\'' +
+                '}';
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -24,12 +32,5 @@ public class Order {
     @Override
     public int hashCode() {
         return Objects.hash(number);
-    }
-
-    @Override
-    public String toString() {
-        return "Order{" +
-                "number='" + number + '\'' +
-                '}';
     }
 }

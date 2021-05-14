@@ -4,15 +4,16 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class WarehouseApp {
-    public static void main(String[] args) throws OrderDoesntExistException {
-        Warehouse.addOrder(new Order("1"));
-        Warehouse.addOrder(new Order("2"));
-        Warehouse.addOrder(new Order("3"));
-        Warehouse.addOrder(new Order("4"));
+    public static void main(String[] args) {
+        Warehouse warehouse = new Warehouse();
+        warehouse.addOrder(new Order("1"));
+        warehouse.addOrder(new Order("2"));
+        warehouse.addOrder(new Order("3"));
+        warehouse.addOrder(new Order("4"));
 
 
         try {
-            Warehouse.getOrder("5");
+            warehouse.getOrder("5");
             throw new OrderDoesntExistException();
 
         } catch (OrderDoesntExistException e) {
