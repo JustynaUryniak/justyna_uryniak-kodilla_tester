@@ -17,7 +17,7 @@ public class Warehouse {
             System.out.println("Searching number: " + number);
             return listOfOrders
                     .stream()
-                    .filter(order -> order.getNumber().equals(order))
+                    .filter(order -> order.getNumber().equals(number))
                     .findFirst()
                     .orElseThrow(OrderDoesntExistException::new);
         }
