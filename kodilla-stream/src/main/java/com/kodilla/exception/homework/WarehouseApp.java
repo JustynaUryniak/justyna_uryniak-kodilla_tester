@@ -11,15 +11,12 @@ public class WarehouseApp {
         Warehouse.addOrder(new Order("4"));
 
 
-
-            try {
-                Warehouse.getOrder("6");
-                return get
-            }
+        try {
+            Warehouse.getOrder("5");
+            throw new OrderDoesntExistException();
 
         } catch (OrderDoesntExistException e) {
             System.out.println("Sorry, order number does not exist");
-
-
+        }
     }
 }

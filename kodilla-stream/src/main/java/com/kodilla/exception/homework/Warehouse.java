@@ -5,24 +5,21 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class Warehouse {
-    public static Set<Order> listOfOrders = new HashSet<>();
+    private static Set<Order> listOfOrders = new HashSet<>();
+
     public static void addOrder(Order order) {
         listOfOrders.add(order);
-    }
-    public static Set<Order> getListOfOrders() {
-        return listOfOrders;
+        System.out.println("Order number: " + order + "has been added");
     }
 
-     public static Order getOrder(String number) throws OrderDoesntExistException {
-         Scanner scanner = new Scanner(System.in);
-         while (true) {
-             System.out.println("Enter number of order: ");
-             String s = scanner.nextLine();
-        // jak wywołać Set?
-        .stream()
-        .filter(o -> o.getNumber().equals(number)
-        // jaką metodę zastosować? findAny? findFirst?
-        .orElse(OrderDoesntExistException());
+
+    public static Order getOrder(String number) throws OrderDoesntExistException {
+            System.out.println("Searching number: " + number);
+            return listOfOrders
+                    .stream()
+                    .filter(order -> order.getNumber().equals(order))
+                    .findFirst()
+                    .orElseThrow(OrderDoesntExistException::new);
         }
-     }
-}
+    }
+
