@@ -19,7 +19,6 @@ class ShopTestSuite {
     Order order5 = new Order(23, LocalDate.of(2019,1,12), "1234");
     Order order6 = new Order(123, LocalDate.of(2018,3,23), "5678");
 
-
     @Test
     public void shouldAddOrderToShop() {
         int numberOfOrder = shop.getSize();
