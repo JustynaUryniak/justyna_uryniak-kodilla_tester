@@ -14,14 +14,14 @@ public class Shop {
         this.orders.add(order);
     }
 
-    public List<Order> getOrdersFromTwoYears(LocalDate firstDate, LocalDate secondDate) {
+    public List<Order> getOrdersBetweenDates(LocalDate firstDate, LocalDate secondDate) {
         return orders
         .stream()
         .filter(date -> date.getDate().isAfter(firstDate) && date.getDate().isBefore(secondDate))
         .collect(Collectors.toList());
     }
 
-    public List<Order> getOrdersMinAndMax(double min, double max) {
+    public List<Order> getOrdersInValueRange(double min, double max) {
         return orders
                 .stream()
                 .filter(value -> value.getOrderValue() >= min && value.getOrderValue() <= max)
@@ -32,7 +32,7 @@ public class Shop {
         return this.orders.size();
     }
 
-    public double sumOrders() {
+    public double getSumOfOrders() {
         double value = 0;
         for (Order shop : orders) {
             value += shop.getOrderValue();

@@ -19,33 +19,6 @@ class ShopTestSuite {
     Order order5 = new Order(23, LocalDate.of(2019,1,12), "1234");
     Order order6 = new Order(123, LocalDate.of(2018,3,23), "5678");
 
-    @Test
-    public void shouldAddOrderToShop() {
-        int numberOfOrder = shop.getSize();
-
-        assertEquals(6, numberOfOrder);
-    }
-
-    @Test
-    public void shouldReturnOrdersFromTwoYears() {
-        int datesOrder = shop.getOrdersFromTwoYears(LocalDate.of(2018,1,1), LocalDate.of(2020,1,1)).size();
-
-        assertEquals(3, datesOrder);
-    }
-
-    @Test
-    public void shouldReturnOrdersFromGivenRange() {
-        int valuesOrder = shop.getOrdersMinAndMax(30,120).size();
-
-        assertEquals(2, valuesOrder);
-    }
-
-    @Test
-    public void shouldReturnSumValueOfOrders() {
-        double sum = shop.sumOrders();
-
-        assertEquals(571, sum, 0.01);
-    }
 
     @BeforeEach
     public void initializeShop() {
@@ -65,5 +38,33 @@ class ShopTestSuite {
     @AfterAll
     public static void displayGoodByeMessage() {
         System.out.println("Finishing testing");
+    }
+
+    @Test
+    public void shouldAddOrderToShop() {
+        int numberOfOrder = shop.getSize();
+
+        assertEquals(6, numberOfOrder);
+    }
+
+    @Test
+    public void shouldReturnOrdersFromTwoYears() {
+        int datesOrder = shop.getOrdersBetweenDates(LocalDate.of(2018,1,1), LocalDate.of(2020,1,1)).size();
+
+        assertEquals(3, datesOrder);
+    }
+
+    @Test
+    public void shouldReturnOrdersFromGivenRange() {
+        int valuesOrder = shop.getOrdersInValueRange(30,120).size();
+
+        assertEquals(2, valuesOrder);
+    }
+
+    @Test
+    public void shouldReturnSumValueOfOrders() {
+        double sum = shop.getSumOfOrders();
+
+        assertEquals(571, sum, 0.01);
     }
 }
