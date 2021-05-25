@@ -17,32 +17,26 @@ public class AlarmService {
         for (Map.Entry<Location, List<Person>> locationEntry : data.entrySet()) {
             if (locationEntry.getKey().equals(location)) {
                 locationEntry.getValue().add(person);
-               // locationEntry.getKey().receiveSubscriber(person);
-                }
             }
         }
+    }
 
     public void removeLocation(Location location) {
         data.remove(location);
     }
 
     public void removeSubscribeFromGivenLocation(Location location, Person person) {
-        for (Map.Entry<Location, List<Person>> locationEntry : data.entrySet()) {
-            if (locationEntry.getKey().equals(location) && locationEntry.getValue().contains(person)) {
-                locationEntry.getValue().remove(person);
-               // locationEntry.getKey().removeSubscriber(person);
+            if (data.containsKey(location)) {
+        data.get(location).remove(person);
             }
         }
-    }
 
     public void removeSubscriber(Person person) {
-        for (Map.Entry<Location, List<Person>> personEntry : data.entrySet()) {
-            if (personEntry.getValue().contains(person)) {
-                personEntry.getValue().remove(person);
-               // personEntry.getKey().removeSubscriber(person);
+            if (data.containsValue(person)) {
+                data.get(person).remove(person);
+
             }
         }
-    }
 
     public void sendNotificationToAllSubscribes(Notifications notifications) {
         for (Map.Entry<Location, List<Person>> entry : data.entrySet()) {

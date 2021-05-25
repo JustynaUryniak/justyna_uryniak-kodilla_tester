@@ -25,7 +25,6 @@ class AlarmServiceTestSuite {
         alarmService.sendNotificationToSelectedLocation(notifications, location);
 
 
-       // Mockito.verify(location, Mockito.times(1)).receiveSubscriber(person);
         Mockito.verify(person, Mockito.times(1)).receive(notifications);
     }
 
@@ -44,9 +43,6 @@ class AlarmServiceTestSuite {
 
         alarmService.sendNotificationToSelectedLocation(notifications, location);
         Mockito.verify(person, Mockito.never()).receive(notifications);
-       // Mockito.verify(location1, Mockito.times(1)).receiveSubscriber(person);
-       // Mockito.verify(location2, Mockito.times(1)).receiveSubscriber(person);
-       // Mockito.verify(location, Mockito.times(1)).removeSubscriber(person);
     }
 
     @Test
@@ -73,7 +69,6 @@ class AlarmServiceTestSuite {
         alarmService.sendNotificationToSelectedLocation(notifications, location);
         alarmService.sendNotificationToSelectedLocation(notifications, location1);
         Mockito.verify(person, Mockito.never()).receive(notifications);
-       /// Mockito.verify(location, Mockito.times(1)).removeSubscriber(person);
     }
 
     @Test
