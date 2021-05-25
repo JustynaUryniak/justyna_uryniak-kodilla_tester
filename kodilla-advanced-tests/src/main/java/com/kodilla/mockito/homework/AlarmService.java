@@ -17,15 +17,12 @@ public class AlarmService {
         for (Map.Entry<Location, List<Person>> locationEntry : data.entrySet()) {
             if (locationEntry.getKey().equals(location)) {
                 locationEntry.getValue().add(person);
-                locationEntry.getKey().receiveSubscriber(person);
+               // locationEntry.getKey().receiveSubscriber(person);
                 }
             }
         }
 
-    public void removeLocation(Location location, Person person) {
-        for (Map.Entry<Location, List<Person>> locationEntry : data.entrySet()) {
-            locationEntry.getKey().removeSubscriber(person);
-        }
+    public void removeLocation(Location location) {
         data.remove(location);
     }
 
@@ -33,7 +30,7 @@ public class AlarmService {
         for (Map.Entry<Location, List<Person>> locationEntry : data.entrySet()) {
             if (locationEntry.getKey().equals(location) && locationEntry.getValue().contains(person)) {
                 locationEntry.getValue().remove(person);
-                locationEntry.getKey().removeSubscriber(person);
+               // locationEntry.getKey().removeSubscriber(person);
             }
         }
     }
@@ -42,7 +39,7 @@ public class AlarmService {
         for (Map.Entry<Location, List<Person>> personEntry : data.entrySet()) {
             if (personEntry.getValue().contains(person)) {
                 personEntry.getValue().remove(person);
-                personEntry.getKey().removeSubscriber(person);
+               // personEntry.getKey().removeSubscriber(person);
             }
         }
     }
