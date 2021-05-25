@@ -3,6 +3,7 @@ package com.kodilla.mockito.homework;
 import com.kodilla.mockito.Notification;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class AlarmService {
 
@@ -13,24 +14,17 @@ public class AlarmService {
     }
 
     public void addSubscriber(Person person, Location location) {
-        if (data.containsKey(location)) {
-            this.addLocations(location);
-    }
         for (Map.Entry<Location, List<Person>> locationEntry : data.entrySet()) {
             if (locationEntry.getKey().equals(location)) {
                 locationEntry.getValue().add(person);
                 locationEntry.getKey().receiveSubscriber(person);
-            }
-        }
-    }
-
-    public void removeLocation(Location location) {
-        for (Map.Entry<Location, List<Person>> locationEntry : data.entrySet()) {
-            if (locationEntry.getKey().equals(location)) {
-                for (Person person : locationEntry.getValue()) {
-                    locationEntry.getKey().removeSubscriber(person);
                 }
             }
+        }
+
+    public void removeLocation(Location location, Person person) {
+        for (Map.Entry<Location, List<Person>> locationEntry : data.entrySet()) {
+            locationEntry.getKey().removeSubscriber(person);
         }
         data.remove(location);
     }
@@ -60,12 +54,9 @@ public class AlarmService {
     }
 
     public void sendNotificationToSelectedLocation(Notifications notifications, Location location) {
-        for (Map.Entry<Location, List<Person>> entry : data.entrySet()) {
-            if (entry.getKey().equals(location)) {
-                entry.getValue().forEach(p -> p.receive(notifications));
+                if (data.containsKey(location)) {
+                    this.data.get(location).forEach(person -> person.receive(notifications));
+
             }
         }
     }
-
-
-}
