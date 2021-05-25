@@ -14,6 +14,9 @@ public class AlarmService {
     }
 
     public void addSubscriber(Person person, Location location) {
+        if (!data.containsKey(location)) {
+            this.addLocations(location);
+        }
         for (Map.Entry<Location, List<Person>> locationEntry : data.entrySet()) {
             if (locationEntry.getKey().equals(location)) {
                 locationEntry.getValue().add(person);

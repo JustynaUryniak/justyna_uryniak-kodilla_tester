@@ -48,6 +48,7 @@ class AlarmServiceTestSuite {
     @Test
     public void unsubscribedClientShouldNotReceiveNotificationFromAnyLocation() {
         alarmService.addSubscriber(person, location);
+        alarmService.removeLocation(location);
         alarmService.removeSubscriber(person);
 
         alarmService.sendNotificationToAllSubscribes(notifications);
