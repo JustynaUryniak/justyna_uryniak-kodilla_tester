@@ -1,15 +1,19 @@
 package com.kodilla.spring.basic.spring_dependency_injection.homework;
 
 
+
+
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
 public class CalculatorTestSuite {
+
 
     ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_dependency_injection.homework");
     Calculator bean = context.getBean(Calculator.class);
@@ -41,4 +45,17 @@ public class CalculatorTestSuite {
 
         assertEquals(1, div, 0.01);
     }
+
+    @Test
+    public void shouldReturnExceptionWhenDividerIsZero_withException() {
+
+        assertThrows(ArithmeticException.class, () -> bean.divide(5,0), "Second number can't be a zero");
+    }
+
+    @Test
+    public void shouldReturnNegativeResultFromDivision() {
+        Double div = bean.divide(6, -2);
+
+        assertEquals(-3, div, 0.01);
+   }
 }

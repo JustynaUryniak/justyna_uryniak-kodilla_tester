@@ -1,6 +1,7 @@
 package com.kodilla.spring.basic.spring_dependency_injection.homework;
 
 import org.springframework.stereotype.Component;
+import sun.tools.tree.DivideExpression;
 
 @Component
 public class Calculator {
@@ -26,7 +27,10 @@ public class Calculator {
         this.display.display(multi);
         return multi;
     }
-    public double divide(double a, double b) {
+    public double divide(double a, double b) throws ArithmeticException {
+        if (b == 0) {
+            throw new ArithmeticException("Second number can't be a zero");
+        }
         double div = a / b;
         this.display.display(div);
         return div;
