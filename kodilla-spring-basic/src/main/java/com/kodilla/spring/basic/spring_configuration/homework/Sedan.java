@@ -1,19 +1,20 @@
 package com.kodilla.spring.basic.spring_configuration.homework;
 
+import java.time.LocalTime;
+
 public class Sedan implements Car {
 
-    boolean headLightsOn;
-
-    public Sedan(boolean headLightsOn) {
-        this.headLightsOn = headLightsOn;
-    }
+    LocalTime time = LocalTime.of(21,23);
 
     @Override
     public boolean hasHeadlightsTurnedOn() {
-        if (headLightsOn) {
-            return  true;
+        LocalTime firstTime = LocalTime.of(6, 0);
+        LocalTime secondTime = LocalTime.of(20, 0);
+        if (time.isAfter(firstTime) && time.isBefore(secondTime)) {
+            return false;
+        } else {
+            return true;
         }
-        return false;
     }
 
     @Override
