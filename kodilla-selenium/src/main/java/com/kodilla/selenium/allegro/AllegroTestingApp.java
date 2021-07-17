@@ -30,12 +30,15 @@ public class AllegroTestingApp {
          categorySelect.selectByIndex(3);
          filter.submit();
 
+        driver.findElement(By.xpath("//html/body/div[2]/div[6]/div/div/div/div/div[2]/div[2]/button[1]")).click();
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("section > article")));
 
         List<WebElement> cards = driver.findElements(By.cssSelector("div[class*= opbox-listing] > div > section > article"));
         System.out.println(cards.size());
         System.out.println(cards.get(6).getText());
+
+
 
 
 
