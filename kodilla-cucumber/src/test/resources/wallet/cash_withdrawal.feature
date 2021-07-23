@@ -3,16 +3,19 @@ Feature: Cash Withdrawal
     Given I have deposit $200 in my wallet
     When I request $30
     Then $30 should be dispensed
+    And the balance of my wallet should be $170
 
    Scenario: Incorrect withdrawal from a wallet
    Given I have deposit $200
    When I request $201
    Then Cash should not be withdrawn
+   And the balance of my wallet should be $200
 
   Scenario: Successful withdrawal resets a wallet
     Given I have deposit $202
     When I request $202
     Then $202 should be dispensed
+    And the balance of my wallet should be $0
 
   Scenario: Zero withdrawal from a wallet in credit
     Given I have deposit $201
