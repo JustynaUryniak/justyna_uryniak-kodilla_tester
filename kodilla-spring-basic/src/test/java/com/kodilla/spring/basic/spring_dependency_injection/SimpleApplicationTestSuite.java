@@ -25,5 +25,29 @@ public class SimpleApplicationTestSuite {
         Assertions.assertEquals("Sending [Test] to: Any receiver using Skype", message);
     }
 
+    @Test
+    public void shouldReturnCorrectFacebookMessage() {
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic");
+        FacebookMessageService bean = context.getBean(FacebookMessageService.class);
+        String message = bean.send("Test", "Any receiver");
+        Assertions.assertNotNull(message);
+    }
+
+    @Test
+    public void shouldReturnCorrectEmailMessage() {
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic");
+        EmailMessageService bean = context.getBean(EmailMessageService.class);
+        String message = bean.send("Test", "Any receiver");
+        Assertions.assertNotNull(message);
+    }
+
+    @Test
+    public void shouldReturnCorrectTextMessage() {
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic");
+        TextMessageService bean = context.getBean(TextMessageService.class);
+        String message = bean.send("Test", "Any receiver");
+        Assertions.assertNotNull(message);
+    }
+
 
 }
